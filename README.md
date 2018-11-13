@@ -38,7 +38,7 @@ To run use `mvn clean install -DskipTests=true alfresco:run` or `./run.sh` and v
 
 https://docs.alfresco.com/5.2/tasks/sdk-develop-intellij.html
 
-#Configure access to Alfresco Private Repository  
+# Configure access to Alfresco Private Repository  
 
 follow this to create a master password and encrypt the alfresco password : https://maven.apache.org/guides/mini/guide-encryption.html
 
