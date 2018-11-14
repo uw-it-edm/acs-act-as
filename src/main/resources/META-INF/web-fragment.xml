@@ -1,0 +1,18 @@
+<web-fragment>
+    <name>AcsActAs</name>
+
+
+    <listener>
+        <description>Spring Framework Initilization</description>
+        <listener-class>
+            org.springframework.web.context.request.RequestContextListener
+        </listener-class>
+    </listener>
+
+    <ordering>
+        <after>
+            <others />
+        </after>
+    </ordering>
+
+</web-fragment>
