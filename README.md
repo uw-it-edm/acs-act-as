@@ -2,6 +2,38 @@
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/d708fdf2a35342eda0fbe8d690e2cb69)](https://app.codacy.com/app/uw-it-edm/acs-act-as?utm_source=github.com&utm_medium=referral&utm_content=uw-it-edm/acs-act-as&utm_campaign=Badge_Grade_Dashboard)
 
+# Create release 
+
+Travis will create a new GitHub release when a new tag is detected.
+To create new tag, run these commands on your local machine : 
+
+    git flow release start x.x.x
+    mvn versions:set -DnewVersion=x.x.x -DgenerateBackupPoms=false
+    git add pom.xml
+    git commit -m "Bump version"
+    git flow feature finish 
+    git push origin master develop
+    
+Once this is done, prepare develop for the next devolpment cycle by updating the pom to use a `SNAPSHOT` version
+
+    mvn versions:set -DnewVersion=x.x.x-SNAPSHOT -DgenerateBackupPoms=false
+    git add pom.xml
+    git commit -m  "Prepare for next development cycle"
+    git push origin develop 
+
+
+# Configure access to Alfresco Private Repository  
+
+follow this to create a master password and encrypt the alfresco password : https://maven.apache.org/guides/mini/guide-encryption.html
+
+Then add the repository in your `.m2/settings.xml` following this : https://docs.alfresco.com/4.2/tasks/dev-extensions-maven-sdk-tutorials-configure-maven-enterprise.html
+
+
+
+
+#Alfresco SDK does not support Alfresco 6.X, the directions below are out of date
+
+
 To run use `mvn clean install -DskipTests=true alfresco:run` or `./run.sh` and verify that it 
 
  * Runs the embedded Tomcat + H2 DB 
@@ -38,8 +70,3 @@ To run use `mvn clean install -DskipTests=true alfresco:run` or `./run.sh` and v
 
 https://docs.alfresco.com/5.2/tasks/sdk-develop-intellij.html
 
-# Configure access to Alfresco Private Repository  
-
-follow this to create a master password and encrypt the alfresco password : https://maven.apache.org/guides/mini/guide-encryption.html
-
-Then add the repository in your `.m2/settings.xml` following this : https://docs.alfresco.com/4.2/tasks/dev-extensions-maven-sdk-tutorials-configure-maven-enterprise.html
