@@ -1,3 +1,5 @@
+# DEPRECATED - This project is deprecated and no longer maintained
+
 # Alfresco Platform JAR Module - SDK 3
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/d708fdf2a35342eda0fbe8d690e2cb69)](https://app.codacy.com/app/uw-it-edm/acs-act-as?utm_source=github.com&utm_medium=referral&utm_content=uw-it-edm/acs-act-as&utm_campaign=Badge_Grade_Dashboard)
